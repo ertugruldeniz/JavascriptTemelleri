@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Dizi İşlemleri</title>
+
+	<script type="text/javascript">
+	
+	var dizi= new Array("Php","Html","Python","Java","javascript","1",1,2,3);
+
+
+	document.write(dizi[2]); //Python yazar.
+
+	//For kullanarak yazdırma işlemi
+	for(var i=0; i<dizi.length; i++){
+		document.write("<br>"+dizi[i]); //Tüm diziyi yazar
+	}
+
+	//For in Kullanımı
+	for(var key in dizi){
+		console.log(dizi[key]); //Tüm diziyi yazar 
+	}
+
+
+	//Çok boyutlu dizi tanımlama 
+
+	var icicedizi=new Array("Php","Python","Java");
+	var kurs=new Array(3);
+
+	for(var i=0;i<3;i++){
+		icicedizi[i]=new Array(3);
+	}
+
+	icicedizi[0][0]="Ertuğrul Deniz";
+	icicedizi[0][1]="10 saat";
+	icicedizi[0][2]="Youtube";
+
+	icicedizi[1][0]="Jone Stemp";
+	//.... devam ediyor
+
+	//Diziye Ulaşma işlemii
+	//Dizide tanımlanmayan icicedizi[1][2] gibi yerlerde undefined yazar ;
+	for(var i=0; i<3;i++){
+		document.writeln("<br>"+icicedizi[i]+"<br>");
+		for(var j=0; j<3;j++){
+			document.writeln(icicedizi[i][j]+"<br>"); 
+		}
+	}
+
+	document.write("<br>");
+	//DİZİ FONKSİYONLARI
+
+	var dizifonk= new Array("Php","Html","Python","Java","javascript","1",1,24,3,"Elma",23);
+	
+	document.write(dizifonk.toString()+"<br>"); //Tostring virgüller ile diziyi ayırır.
+	//Çıktı : Php,Html,Python,Java,javascript,1,1,24,3,Elma,23
+
+	konum=dizifonk.indexOf("Java"); //Dizi içerisindeki elemanın konumunu veriyor;
+	document.write(konum+"<br>");
+	//Çıktı:3
+
+
+	document.write(dizifonk.join("*")+"<br>"); //Join ayırıcıyı kendimiz belirtebiliyoruz...
+    //Çıktı : Php*Html*Python*Java*javascript*1*1*24*3*Elma*23
+
+    dizifonk.pop(); //Sonda bulunan 23 kaldırdı
+	document.write(dizifonk.toString()+"<br>"); //Dizinin son öğesini kaldırır...
+	//Çıktı : Php,Html,Python,Java,javascript,1,1,24,3,Elma
+
+	dizifonk.push("Buyaziyiekle"); //Dizi sonuna eleman eklendi
+	document.write(dizifonk.toString()+"<br>"); 
+	//Çıktı : Php,Html,Python,Java,javascript,1,1,24,3,Elma,Buyaziyiekle
+
+	dizifonk.shift(); //Dizinin ilk öğesini kaldırır.
+	document.write(dizifonk.toString()+"<br>");
+	//Çıktı : Html,Python,Java,javascript,1,1,24,3,Elma,Buyaziyiekle
+
+    dizifonk.unshift("Basaekle"); //Dizinin başına öğe ekler.
+	document.write(dizifonk.toString()+"<br>");
+	//Çıktı : Basaekle,Html,Python,Java,javascript,1,1,24,3,Elma,Buyaziyiekle
+
+	dizifonk.reverse(); //Diziyi tersine çevirir.
+	document.write(dizifonk.toString()+"<br>");
+	//Çıktı: Buyaziyiekle,Elma,3,24,1,1,javascript,Java,Python,Html,BasaekleBuyaziyiekle,Elma,3,,1,1,javascript,Java,Python,Html,Basaekle
+
+	dizifonk.sort(); //Diziyi sıralar. Rakamlar ascıı koduna göre sıralanır
+	document.write(dizifonk.toString()+"<br>");
+
+
+	delete dizifonk[3]; //Diziden verilen indisdeki değeri siler. Delete işleminde indis de değerle beraber silinir.
+	document.write(dizifonk.toString()+"<br>");
+	//Çıktı : Basaekle,Html,Python,javascript,1,1,24,3,Elma,Buyaziyiekle
+
+	
+	var dizi2= new Array("Dizi 2 elemanı","Yenidizi");
+	birlesen=dizifonk.concat(dizi2); //İki diziyi birleştirme birbirine dahil etme işlemi yapar , 1 den fazla dizi birleştirilebilir.
+	document.write(birlesen.toString()+"<br>");
+	//Çıktı:Basaekle,Html,Python,,javascript,1,1,24,3,Elma,Buyaziyiekle,Dizi 2 elemanı,Yenidizi
+
+
+
+	ayirmaislemi=dizifonk.slice(2);	//Slice kullanımı belirtilen dizi indisine göre diziler ayrılabilir.
+	//slice(3,9) yazarsak 3 ile 9 aralığını alır.
+	document.write(ayirmaislemi+"<br>");
+	//Çıktı: Python,javascript,1,1,24,3,Elma,Buyaziyiekle
+
+
+	document.write(ayirmaislemi.length+"<br>"); //length dizi uzunluğunu verir.
+	//Çıktı: 9
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

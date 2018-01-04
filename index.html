@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Java Script Notları</title>
+
+
+	<script type="text/javascript">
+
+	var e="javascript notları";
+
+	//Merhaba bu yorum satırı CTRL+SHIFT İle yapıyorum
+	/*CTRL+SHIFT+7 İLE ok satırlı yorum satırı yapıyorum*/
+	alert("DENEME  CTRL+SHIFT+R İLE OTOMATİK SAYFA YENİLEMESİ YAPIYORUM");
+
+	document.write("Deneme");  //Ekrana yazdırma
+
+	console.log(e);  //Console ekranına yazı yazdırma
+
+	document.write("DENEME EKRANI");
+
+	console.log("Değişkenin türünü göster:"+typeof(e));
+
+	var sayi1=23;
+	var sayi2=343;
+	var toplam=parseInt(sayi1)+parseInt(sayi2);  //Toplama için integer türüne çevirme işlemi
+
+	console.log("Sayilarin toplamı:"+toplam);
+
+
+
+	function toplama(){
+		var a=1000;
+		var b=3;
+		c=a+b;
+		return "\n"+c;
+	}
+	document.write(toplama());	
+	document.write("<br>Fonksiyon içerisindeki değişkenen dışarıdan ulaşılamaz //A ve b deişkenine ulaşamıyorum");
+
+	for (var i = 100; i >= 0; i--) {
+
+		if(0==i%10){
+			document.write("<br>"+i);
+			document.write(" 10 bölünüyorsun");
+		}
+		console.log(i);
+	}
+
+</script>
+
+</head>
+
+</body>
+</html>

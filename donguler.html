@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>Donguler ve Hata yönetimi</title>
+
+<script type="text/javascript">
+	
+    var dizi={a:"1",b:"2",c:"3",d:"4"};
+
+	for(key in dizi){
+		document.writeln(dizi[key]+":");
+		document.writeln(key);
+	}
+
+	var i,j;
+	for(i=1; i<=9;  i++){
+		for(j=1;j<=9;j++){
+			 console.log(i+"x"+j+"="+i*j); //Çarpım Tablosu yapımı
+		}
+	}
+
+
+	try{
+		var a="<br>A değişkenş olmasa catch kısmına girer";
+		document.writeln(a);
+	}catch(error){
+		document.writeln("<br>A diye bir değişken olmadığı için catch kısmı çalıştı"+error+" hatası ");
+	}finally{
+		document.writeln("<br>Her koşulda finally çalışır..");
+	}
+
+
+	var temp=1;
+	var temp1=2;
+
+	try{
+		if(temp<temp1){
+			throw "buyuk";  //Kendi hata bloklarımızı oluşturmaya yarar...
+		}
+		document.writeln("a:"+a+" b:"+ b);
+	}catch(error){
+		if(error=="buyuk"){
+			document.writeln("temp1 temp değişkeninden büyük olduğu için bura çalışır...");
+		}
+	}
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

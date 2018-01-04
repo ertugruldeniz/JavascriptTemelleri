@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hata Yönetimi Java Script</title>
+</head>
+<body>
+
+<a href="javascript:void(0)"> Buna tıklayınca işlem yapmasın :)</a>
+
+<a href="javascript:void(document.body.style.backgroundColor='yellow');"> Arka Planı Sarı Yap</a> 
+<!-- Sayfa Yenilenmeden işlem yapar javascript:void fonksiyonu -->
+
+
+<script type="text/javascript">
+	
+		var x=prompt("Sayi giriniz");/*Klavyeden içerik girebilir.*/
+
+		var y=prompt("Sayi 2 giriniz");/*Klavyeden içerik girebilir.*/
+
+		var toplam=parseInt(x)+parseInt(y);
+
+		alert(toplam);
+
+	
+		
+
+		document.write( new Date().getDay()); //Bulunduğumuz Günü Gösteren Kod 1,2,3,4,5,6,7 şeklinde gösteren kod
+
+
+
+		var gun= new Date().getDay();
+		switch(gun){
+			case 1: document.write("Pazartesi");
+			break;
+			case 2: document.write("Salı");
+			break;
+			case 3: document.write("Çarşamba");
+			break;
+			case 4: document.write("Perşembe");
+			break;
+			case 5: document.write("Cuma");
+			break;
+			case 6: document.write("Cumartesi");
+			break;
+			case 7: document.write("Pazar");
+			break;
+
+			default:document.write("Tanımsız");
+		}
+
+
+		function addZero(i) {
+	    if (i < 10) {
+	        i = "0" + i;
+	    }
+	    return i;
+		}
+		//SAAT:DAKİKA:SANİYE dndüren kod
+		function myFunction() {
+		    var d = new Date();
+		    var x = document.getElementById("demo");
+		    var h = addZero(d.getHours());
+		    var m = addZero(d.getMinutes());
+		    var s = addZero(d.getSeconds());
+		    x.innerHTML = h + ":" + m + ":" + s;
+		}
+
+</script>
+
+<button onclick="myFunction()">Tıkla ve saati gör</button> //Butona tıklandığında fnksyon çalışır.
+
+<p id="demo"></p>
+
+</body>
+</html>

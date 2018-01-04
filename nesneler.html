@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nesneler</title>
+
+	<script type="text/javascript">
+
+		//İki şekilde nesne tanımalama
+		//1.yol
+		var araba={
+			marka:"Ford",
+			renk:"kırmızı",
+			km:20000,
+			yil:2015,
+			tumu:function(){ //Metod tanımlama
+				return this.marka+" "+ this.renk+" "+ this.km+" "+ this.yil ;
+			},
+			yas:function(){
+				return (2018-this.yil);
+			}
+
+		}
+		console.log(araba);
+		console.log(araba.marka);
+	    document.write(araba.tumu()+"<br>");
+	    document.write(araba.yas());
+		//2.yol
+		function arabam(marka,renk,km,yil){
+			this.marka=marka;
+			this.renk=renk;
+			this.km=km;
+			this.yil=yil;
+		}
+
+		var araba1=new arabam("Bmw","Siyah",10000,2003);
+		console.log(araba1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/*KULLANIMLARI */
+
+		//getDate
+		//getDay
+		//getMonth
+		//getFullYear
+		//setData
+		//setFullYear
+		//setMonth
+		//getHours
+		//setHours
+		//setMonth
+		//getMinutes
+		//setMinutes
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
