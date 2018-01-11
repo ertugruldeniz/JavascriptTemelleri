@@ -35,32 +35,89 @@
 		var araba1=new arabam("Bmw","Siyah",10000,2003);
 		console.log(araba1);
 
+		//STRİNG İŞLEMLERİ
+		var degisken="Ertuğrul DENİZ DENİZ";
+		//length ->Boyut döndürür
+		document.write("<br>"+degisken.length); //Boyut döndürür.
+		//indexof -> Aranan verinin konumunu döndürür.
+		document.write("<br>"+degisken.indexOf("DENİZ"));
+        //lastIndexOf -> Aranan verinin EN SON konumunu döndürür.
+		document.write("<br>"+degisken.lastIndexOf("DENİZ"));
+		//search -> aranan kelimenin başlangıc konumunu döndürür. indexOf tan benzer
+		document.write("<br>"+degisken.search("DENİZ"));
+		//substr -> Belli metinleri kesmek için kullanılır.Belirlenen karakterden sonrasını almaya yarar.3 den sonra ,7 karakter al
+		document.write("<br>"+degisken.substr(3,7));
+		//replace kullanımı -> Belirlenen metni değiştirmeye yarar.İlk karşılaştığı değişkeni değiştirir.
+		document.write("<br>"+degisken.replace("DENİZ","soyad"));
+        document.write("<br>"+degisken.replace(/DENİZ/g,"...")); //Çoklu argüman değiştirme işlemi DENİZ yazan yer ...
+        document.write("<br>"+degisken.replace(/DENİZ/gi,"...")); //Küçük harf duyarlılığı sağla "i"...
+        //toLowerCase ->Küçük harfe çevirme işlemi
+        document.write("<br>"+degisken.toLowerCase());
+       //toUpperCase ->Büyük harfe çevirme işlemi
+        document.write("<br>"+degisken.toUpperCase());
+        //concat ->iki katarı birleştirir
+        var ad="Ertuğrul";
+        var soyad="Deniz";
+        var okul="Kocaeli Üni";
+        document.write("<br>"+ad.concat(" ",soyad," ",okul));
+        //split -> bir katarı berlirteçe göre paraçalar ve diziye çevirir
+        document.write("<br>"+degisken.split(" "))
+
+        //MATH SINFI KULLANIMLARI
+
+        //Pİ sayıısı kullanımı
+        document.write("<br>"+Math.PI);
+        //Ceil ->ondalık sayıya yuvarlaman işlemi
+        var e=23.2;
+        document.write("<br>"+Math.ceil(e)); //24 e yuvarladı->yukarı yuvarlar
+        //floor aşağı yuvarlar
+        document.write("<br>"+Math.floor(e)); //Kendisine yakın alt sayıya yuvarladı
+        //min ve max  bulur
+        var max=Math.max(1,32,4,55,6,7);
+        var min=Math.min(23,334,4,2,64);
+        document.write("<br>max:"+max);
+        document.write("<br>min:"+min);
+        //round sayıyı yuvarlama işlemi yapar->kendisine en yakın sayıya yuvarlar
+        document.write("<br>"+Math.round(e));
+        //sqrt -> girilen sayının karakökünü bulma işlemi
+        document.write("<br>",Math.sqrt(36));
+        //random -> random sayı üretme işlemi 0 ve 1 arasında
+        var rand=Math.random();
+        document.write("<br>"+rand);
 
 
 
 
 
-
-
-
-
-
-
-
-		/*KULLANIMLARI */
-
-		//getDate
-		//getDay
+		/*TARİH VE SAATLERDE KULLANIMLARI */
+		var tarih=new Date();
+		//getDate -> 
+		document.write("<br>"+tarih.getDate()); //Ay içerisinde bulunan gün
+		//getDay   
+		document.write("<br>"+tarih.getDay()); //Haftanın gününü döndürür
 		//getMonth
+		document.write("<br>"+tarih.getMonth()); //Hangi ayda olduğumuzu döndürür. Ocak - 0 şeklinde
 		//getFullYear
-		//setData
+		document.write("<br>"+tarih.getFullYear()); //Hangi yıldayız
+		
+		//setData ->ayarlama işlemi ->bügün ayın 11 diye ayarladık
+		document.write("<br>"+tarih.setDate(11)); //
 		//setFullYear
+		document.write("<br>"+tarih.setFullYear(2015)); //Yılı 2015 olarak güncelledik
 		//setMonth
+		document.write("<br>"+tarih.setMonth(2)); //3 ay olarak değiştirdik
 		//getHours
+		document.write("<br>"+tarih.getHours()); //Saati verir :13:00 ->13 döndürür
 		//setHours
-		//setMonth
+		document.write("<br>"+tarih.setHours(15)); //Saati değiştirebiliriz  15:00 yaptık
 		//getMinutes
+		document.write("<br>"+tarih.getMinutes()); //Dakika döndürür 13:51 -> 53 döner
 		//setMinutes
+		document.write("<br>"+tarih.setMinutes(33)); //Dakikayı değiştirdik
+		//getSeconds ->saniyeyi döndürür
+		document.write("<br>"+tarih.getSeconds()); //Ay içerisinde bulunan gün
+
+
 	</script>
 
 </head>
