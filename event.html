@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event İşlemleri</title>
+</head>
+<body>
+<a href="htpp://ertugruldeniz.com" id="sec">Ertuğrul Deniz</a>
+
+<input onkeydown="islem()" type="text" name="" placeholder="Bir Tuşa Basınız" >
+<input onkeypress="islem1()" type="text" name="" placeholder="Bir Tuşa Basınız" id="yazi" >
+
+<input onkeyup="up()" onkeydown="down()" type="text" name="" placeholder="Bir Tuşa Basınız" id="x" >
+
+<br>
+
+<p id="sonuc"></p>
+
+<script type="text/javascript">
+	//bir olayı etkisiz hale getirme işlemi event.preventDefault
+	document.getElementById("sec").addEventListener("click",function(event){
+
+		event.preventDefault();
+	})
+
+	//onkeydown VE onkeypres KLAVYE OLAYLARINI YAKALAR
+	var i=0;
+	function islem(){
+		i++;
+		console.log(i);
+		document.getElementById("sonuc").innerHTML=i;
+	}
+
+	function islem1(){
+		i++;
+		console.log(i);
+		var a= document.getElementById("yazi").value;
+		document.getElementById("sonuc").innerHTML=a;
+	}
+
+	//DOWN VE UP
+
+	function down(){
+		document.getElementById("x").style.backgroundColor="pink";
+	}
+
+	function up() {
+		document.getElementById("x").style.backgroundColor="yellow";
+
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom İşlemleri</title>
+	<style type="text/css">
+		
+		#yeniid{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<p id="p">Bu bir paragraf etiketidir..</p>
+
+	<p id="p" >2.p..</p>
+    
+    <p id="p" class="classsecici">3.p..</p>
+
+    <p id="stil">Stil</p>
+
+    <ul>
+    	<li>Ankara</li>
+    	<li>istanbul</li>
+    </ul>
+
+     <input id="stil1" placeholder="Şuan Boş" />
+
+        <p id="stil2">Stil</p>
+
+          <p id="stil3">Stil</p>
+    <input type="" name="" onclick="islem()" value="Değiştir" />
+
+
+	<button id="islem" onclick="ekle()" > İd sini değiştir </button>
+	<input type="text" name="d" id="d" placeholder="" class="classsecici">
+
+		<script type="text/javascript">
+		//Document Object Model (DOM)
+		//Dom belgelere erişmek için belirli standartlar sağlar.
+		//HTML ve programla dilleri arasında standart oluşturarak bilgi akışını sağlar.
+		//Html öğelerine ulaşılıp stilleri değiştirilebiilir ve eventler verilebilir.
+		
+		var e=document.getElementById("p").innerHTML="P içerisine bu yazı yazılacak";
+		var e=document.getElementById("p").id="pninyeniidsibu";
+		console.log(e);
+
+         var i=0;
+		function ekle(){
+			
+			if(i%2==0){
+			   document.getElementById("d").value="";
+               document.getElementById("d").placeholder="Place holder eklendi";
+			}else{
+             
+             document.getElementById("d").value="value eklendi";
+
+			}
+			i++;
+			console.log(i);
+		}
+
+		//getElementsByTagname
+
+		console.log(document.getElementsByTagName("p")[1]);
+
+		//getElementsByClassName 
+
+		console.log(document.getElementsByClassName("classsecici").value="Yazı değiştirildi");
+
+		//css e müdehale etme
+
+		function islem(){
+			document.getElementById("stil").style.color="red";
+			document.getElementById("stil").style.backgroundColor="yellow";
+
+
+			//Diğer yöntemler setAttribute
+			document.getElementById("stil1").setAttribute("value","Value eklendi ve sadece okunabilir yazı oldu değiştirilemez alan")
+			document.getElementById("stil1").setAttribute("readonly","readonly")
+
+			var x=document.getElementById("stil1").attributes;
+			console.log(x);
+
+			//Sorgulayar hasAttributes
+			console.log(document.getElementById("stil1").hasAttribute("value")); //Stil1 adında bulunan id li değerler arasındaki taglarda "value" ifadesi var mı yok mu var ise tru yok ise false döner
+		}
+		
+  
+	   </script>
+
+</body>
+</html>
