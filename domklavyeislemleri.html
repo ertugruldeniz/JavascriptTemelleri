@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Klavye Tıklama işlemleri</title>
+</head>
+<body>
+
+	<input type="text" onkeydown="islem()" placeholder="Bir tuşa basınız" name="">
+
+	<div id="sonuc"></div>
+	<div id="sonuc1"></div>
+	<div id="sonuc2"></div>
+	<div id="sonuc3"></div>
+
+	<script type="text/javascript">
+		
+		var div=document.getElementById("sonuc");
+		//altKey, ctrlKey, shiftKey Kullanımı
+
+		function islem(){
+
+			if(event.altKey){
+				div.innerHTML="Alt tuşuna basıldı";
+			}else if(event.ctrlKey){
+			   div.innerHTML="Ctrl tuşuna basıldı";
+
+			}else if(event.shiftKey){
+				div.innerHTML="Shift tuşuna basıldı";
+
+			}
+
+			// charCode, which, keycode Kullanımı
+			var div1=document.getElementById("sonuc1");
+			var div2=document.getElementById("sonuc2");
+			var div3=document.getElementById("sonuc3");
+
+			//key klavyedebn hangi tuşa basilirsa onu dondurur.
+			if(event.key){
+
+				div1.innerHTML="Klavyeden basılan tuş: "+event.key; 
+			}
+
+			if(event.which){
+
+				div1.innerHTML="Unicode karakteri which: "+event.which; //klavyede basılan ascıı karakter
+			}
+
+			if(event.keycode){
+				div2.innerHTML="Unicode karakteri keycode: "+event.keycode;
+			}
+
+			if(event.charCode){
+				div3.innerHTML="Unicode karakteri charCode: "+charCode.charCode;
+			}
+
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
