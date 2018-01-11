@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom Form Olayları</title>
+</head>
+<body>
+
+<input type="text" placeholder="Onblur" id="sec" onblur="Xonblur()" name="">
+
+<select id="secim" onchange="XonChange()">
+	<option>Python</option>
+	<option>Java</option>
+	<option>Php</option>
+</select>
+
+<input type="text" placeholder="onFocus" id="sec" onfocus="XonFocus(this)" name="">
+<input type="text" placeholder="onFocusin" id="sec" onfocusin="XonFocusin(this)" name="">
+<input type="text" placeholder="onFocusin" id="sec" onfocusout="XonFocusout(this)" name="">
+<div id="sonuc"></div>
+<script type="text/javascript">
+	
+function Xonblur(){
+ document.getElementById("sonuc").innerHTML="Seçim bitti";
+}
+
+
+function XonChange(){
+ var secim=document.getElementById("secim").value;
+ document.getElementById("sonuc").innerHTML="Seçiminiz: "+secim;
+}
+
+function XonFocus(x){
+	x.style.backgroundColor="red";
+}
+//onfocusin - tıklandığında
+function XonFocusin(x){
+	x.style.backgroundColor="yellow";
+}
+//onfocusout -çıktığında
+function XonFocusout(x){
+	x.style.backgroundColor="pink";
+}
+
+//oninvalid ->Alanı doldurmadıysa uyarı verdirme alandan ayrıldığı an bildiri ver
+//onreset formda çalışır.//form içeriğini temizler
+//onselect input içerisine yazılan yazı seçilice çalışır.
+//onsubmit form gönderildiğinde çalışır.
+//onsearch //type="search" yapılmalı araöa kutusu
+
+
+</script>
+</body>
+</html>
